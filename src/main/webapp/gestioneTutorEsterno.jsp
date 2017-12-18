@@ -40,29 +40,24 @@
 <![endif]-->
 <style type="text/css">
 #button1:active, #button1:hover {
-background-color: blue;
+	background-color: blue;
 }
 
-#label1{
-visibility: visible;
-
+#label1 {
+	visibility: visible;
 }
 
-#label2{
-visibility: hidden;
+#label2 {
+	visibility: hidden;
 }
 
-
-@media screen and (min-width: 300px){
-#label1{
-visibility: hidden;
-
-}
-
-#label2{
-visibility: visible;
-}
-	
+@media screen and (min-width: 300px) {
+	#label1 {
+		visibility: hidden;
+	}
+	#label2 {
+		visibility: visible;
+	}
 }
 </style>
 </head>
@@ -102,8 +97,10 @@ visibility: visible;
 			<!-- ============================================================== -->
 			<!-- Container fluid  -->
 			<!-- ============================================================== -->
-			<div class="container-fluid" >
-
+			<div class="container-fluid">
+				<%
+					//if(tutor==null){
+				%>
 				<div class=".col-sm-8">
 					<div class="card card-block" onmousemove="change()">
 						<h3 class="box-title m-b-0" style="text-align: center;">
@@ -111,50 +108,48 @@ visibility: visible;
 						<p></p>
 						<form class="form-horizontal" method="post">
 							<div class="form-group row">
-							
+
 								<label for="inputNome2"
 									class="col-sm-2 text-right control-label col-form-label"
-									id="label1">Nome</label>
-									
-									<label for="inputNome2"
+									id="label1">Nome</label> <label for="inputNome2"
 									class="col-sm-2 text-left control-label col-form-label"
 									id="label2">Nome</label>
-									
+
 								<div class="col-sm-8">
-									<input type="text" required="required" class="form-control" 
-										id="inputNome1" placeholder="Nome" maxlength="20" pattern="[A-Za-z']" >
+									<input type="text" required="required" class="form-control"
+										id="inputNome1" placeholder="Nome" maxlength="20"
+										pattern="[A-Za-z']">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="inputCognome3"
 									class="col-sm-2 text-right control-label col-form-label"
-									id="label1">Cognome</label>
-									<label for="inputCognome3"
+									id="label1">Cognome</label> <label for="inputCognome3"
 									class="col-sm-2 text-left control-label col-form-label"
 									id="label2">Cognome</label>
 								<div class="col-sm-8">
-									<input type="text" required="required"
-										class="form-control"
+									<input type="text" required="required" class="form-control"
 										id="inputCognome2" placeholder="Cognome" pattern="[A-Za-z']">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="inputCodiceFiscale3"
 									class="col-sm-2 text-right control-label col-form-label"
-									id="label1">Codice Fiscale</label>
-									<label for="inputCodiceFiscale3"
+									id="label1">Codice Fiscale</label> <label
+									for="inputCodiceFiscale3"
 									class="col-sm-2 text-left control-label col-form-label"
 									id="label2">Codice Fiscale</label>
 								<div class="col-sm-8">
-									<input type="text" class="form-control" id="inputCodiceFiscale3"
-										placeholder="Codice Fiscale" required="required" pattern="[A-Z]{6}[0-9]{2}[A-Z]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Z]">
+									<input type="text" class="form-control"
+										id="inputCodiceFiscale3" placeholder="Codice Fiscale"
+										required="required"
+										pattern="[A-Z]{6}[0-9]{2}[A-Z]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Z]">
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="inputSesso3"
 									class="col-sm-2 text-right control-label col-form-label"
-									id="label1">Sesso</label>
-									<label for="inputSesso3"
+									id="label1">Sesso</label> <label for="inputSesso3"
 									class="col-sm-2 text-left control-label col-form-label"
 									id="label2">Sesso</label>
 								<div class="col-sm-8">
@@ -170,51 +165,62 @@ visibility: visible;
 							<div class="form-group row">
 								<label for="inputemail4"
 									class="col-sm-2 text-right control-label col-form-label"
-									id="label1">Indirizzo Email</label>
-									<label for="inputemail4"
+									id="label1">Email</label> <label for="inputemail4"
 									class="col-sm-2 text-left control-label col-form-label"
-									id="label2">Indirizzo Email</label>
+									id="label2">Email</label>
 								<div class="col-sm-8">
 									<input type="email" class="form-control" id="inputemail4"
 										placeholder="Email" required="required">
 								</div>
 							</div>
 							<div class="form-group row">
+								<label for="inputindirizzo4"
+									class="col-sm-2 text-right control-label col-form-label"
+									id="label1">Indirizzo</label> <label for="inputindirizzo4"
+									class="col-sm-2 text-left control-label col-form-label"
+									id="label2">Indirizzo </label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="inputindirizzo4"
+										placeholder="Indirizzo" pattern="[A-Za-z,]{0-9}"
+										required="required">
+								</div>
+							</div>
+							<div class="form-group row">
 								<label for="inputtel5"
 									class="col-sm-2 text-right control-label col-form-label"
-									id="label1">Numero Di Telefono</label>
-										<label for="inputtel5"
+									id="label1">Telefono</label> <label for="inputtel5"
 									class="col-sm-2 text-left control-label col-form-label"
-									id="label2">Numero Di Telefono</label>
+									id="label2">Telefono</label>
 								<div class="col-sm-8">
 									<input type="tel" class="form-control" id="inputtel5"
-										placeholder="Numero Di Telefono" required="required" pattern="[0-9]">
+										placeholder="Telefono" required="required" pattern="[0-9]">
 								</div>
 							</div>
 
 							<div class="form-group m-b-0">
 								<div class="offset-sm-3 col-sm-9">
 									<div class="button-box">
-										<button type="submit" id="buttonAggiungi" class="btn btn-primary"
-											data-toggle="modal" data-target="#myModal" 
-											style="text-align: center;" disabled="disabled">Aggiungi
-											Tutor Esterno</button>
+										<button type="submit" id="buttonAggiungi"
+											class="btn btn-primary" data-toggle="modal"
+											data-target="#myModal" style="text-align: center;"
+											disabled="disabled">Aggiungi Tutor Esterno</button>
 
 
 										<div class="modal fade" id="myModal" role="dialog">
 											<div class="modal-dialog">
 
-												
+
 												<div class="modal-content">
 													<div class="modal-header">
-													<h4 class="modal-title">Aggiugi Tutor</h4>
+														<h4 class="modal-title">Aggiugi Tutor</h4>
 													</div>
 													<div class="modal-body">
 														<p>Aggiunta del tutor esterno avvenuta corettamente.</p>
 													</div>
 													<div class="modal-footer">
-														<button id="button1" type="button" class="btn btn-primary" >
-															<a href="home.jsp" style="text-decoration: none; color: white;">
+														<button id="button1" type="button" class="btn btn-primary">
+															<a href="home.jsp"
+																style="text-decoration: none; color: white;">
 																Dashboard </a>
 														</button>
 													</div>
@@ -233,7 +239,181 @@ visibility: visible;
 
 
 				</div>
+				<%
+					//}else if(tutor!=null){
+				%>
 
+				<div class=".col-sm-8">
+					<div class="card card-block" onmousemove="change()">
+						<h3 class="box-title m-b-0" style="text-align: center;">
+							Modifica Tutor Esterno</h3>
+						<p></p>
+							<div class="form-group row">
+
+								<label for="inputNome2"
+									class="col-sm-2 text-right control-label col-form-label"
+									id="label1">Nome</label> <label for="inputNome2"
+									class="col-sm-2 text-left control-label col-form-label"
+									id="label2">Nome</label>
+
+								<div class="col-sm-8">
+									<input type="text" required="required" class="form-control"
+										value="<%=%>" id="inputNome1" placeholder="Nome"
+										maxlength="20" pattern="[A-Za-z']">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="inputCognome3"
+									class="col-sm-2 text-right control-label col-form-label"
+									id="label1">Cognome</label> <label for="inputCognome3"
+									class="col-sm-2 text-left control-label col-form-label"
+									id="label2">Cognome</label>
+								<div class="col-sm-8">
+									<input type="text" required="required" class="form-control"
+										value="<%=%>" id="inputCognome2" placeholder="Cognome"
+										pattern="[A-Za-z']">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="inputCodiceFiscale3"
+									class="col-sm-2 text-right control-label col-form-label"
+									id="label1">Codice Fiscale</label> <label
+									for="inputCodiceFiscale3"
+									class="col-sm-2 text-left control-label col-form-label"
+									id="label2">Codice Fiscale</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control"
+										id="inputCodiceFiscale3" value="<%=%>"
+										placeholder="Codice Fiscale" required="required"
+										pattern="[A-Z]{6}[0-9]{2}[A-Z]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Z]">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="inputSesso3"
+									class="col-sm-2 text-right control-label col-form-label"
+									id="label1">Sesso</label> <label for="inputSesso3"
+									class="col-sm-2 text-left control-label col-form-label"
+									id="label2">Sesso</label>
+								<div class="col-sm-8">
+
+									<label class="radio-inline"> <input type="radio"
+										name="optradio"> M
+									</label> <label class="radio-inline"> <input type="radio"
+										name="optradio"> F
+									</label>
+
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="inputemail4"
+									class="col-sm-2 text-right control-label col-form-label"
+									id="label1">Email</label> <label for="inputemail4"
+									class="col-sm-2 text-left control-label col-form-label"
+									id="label2">Email</label>
+								<div class="col-sm-8">
+									<input type="email" class="form-control" id="inputemail4"
+										value="<%=%>" placeholder="Email" required="required">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="inputindirizzo4"
+									class="col-sm-2 text-right control-label col-form-label"
+									id="label1">Indirizzo</label> <label for="inputindirizzo4"
+									class="col-sm-2 text-left control-label col-form-label"
+									id="label2">Indirizzo </label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" id="inputindirizzo4"
+										value="<%=%>" placeholder="Indirizzo"
+										pattern="[A-Za-z,]{0-9}" required="required">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="inputtel5"
+									class="col-sm-2 text-right control-label col-form-label"
+									id="label1">Telefono</label> <label for="inputtel5"
+									class="col-sm-2 text-left control-label col-form-label"
+									id="label2">Telefono</label>
+								<div class="col-sm-8">
+									<input type="tel" class="form-control" id="inputtel5"
+										value="<%=%>" placeholder="Telefono" required="required"
+										pattern="[0-9]">
+								</div>
+							</div>
+
+							<div class="form-group m-b-0">
+								<div class="offset-sm-3 col-sm-9">
+									<div class="button-box">
+										<button type="submit" id="buttonAggiungi"
+											class="btn btn-primary" data-toggle="modal"
+											data-target="#myModal" style="text-align: center;"
+											disabled="disabled">Modifica Tutor Esterno</button>
+
+
+										<div class="modal fade" id="myModal" role="dialog">
+											<div class="modal-dialog">
+
+
+												<div class="modal-content">
+													<div class="modal-header">
+														<h4 class="modal-title">Modifica Tutor</h4>
+													</div>
+													<div class="modal-body">
+														<p>Confermi le tue modifiche?</p>
+														<div class="row">
+															<div class="col-md-3 col-xs-6">
+																<strong>Nome</strong> <br>
+																<p class="text-muted"><%=%></p>
+															</div>
+															<div class="col-md-3 col-xs-6 b-r">
+																<strong>Cognome</strong> <br>
+																<p class="text-muted"><%=%></p>
+															</div>
+															<div class="col-md-3 col-xs-6 b-r">
+																<strong>Codice Fiscale</strong> <br>
+																<p class="text-muted"><%=%></p>
+															</div>
+															<div class="col-md-3 col-xs-6 b-r">
+																<strong>Email</strong> <br>
+																<p class="text-muted"><%=%></p>
+															</div>
+															<div class="col-md-3 col-xs-6 b-r">
+																<strong>Telefono</strong> <br>
+																<p class="text-muted"><%=%></p>
+
+															</div>
+															<div class="col-md-3 col-xs-6 b-r">
+																<strong>Indirizzo</strong> <br>
+																<p class="text-muted"><%=%></p>
+															</div>
+														</div>
+														<div class="modal-footer">
+														<form method="get" action="modificaTutorEsterno">
+															<button style="float: left;" type="submit"
+																class="btn btn-info waves-effect text-right"
+																data-dismiss="modal">Modifica</button>
+														</form>
+														<button style="float: right;" type="button"
+															class="btn btn-danger waves-effect text-left"
+															data-dismiss="modal">Close</button>
+														
+													</div>
+												</div>
+
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+					
+					</div></div>
+
+
+
+
+				<%
+					//}
+				%>
 
 			</div>
 			<!-- ============================================================== -->
@@ -286,20 +466,22 @@ visibility: visible;
 	<!-- ============================================================== -->
 	<script src="assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
 
-<script type="text/javascript">
-function showButton(){
-	   var a = document.getElementById("inputNome1").value;
-	   var b = document.getElementById("inputCognome2").value;
-	   var c= document.getElementById("inputCodiceFiscale3").value;
-	   var d= document.getElementById("inputemail4").value;
-	   var e= document.getElementById("inputtel5").value;
-	
-	
-	    
-	if((a.length >0 )&& (b.length >0 )&& (c.length >0) && (d.length >0 )&& (e.length >0)){
-	document.getElementsById("buttonAggiungi").removeAttribute("disabled");
-}}
-</script>
+	<script type="text/javascript">
+		function showButton() {
+			var a = document.getElementById("inputNome1").value;
+			var b = document.getElementById("inputCognome2").value;
+			var c = document.getElementById("inputCodiceFiscale3").value;
+			var d = document.getElementById("inputemail4").value;
+			var e = document.getElementById("inputtel5").value;
+			var f = document.getElementById("inputindirizzo4").value;
+
+			if ((a.length > 0) && (b.length > 0) && (c.length > 0)
+					&& (d.length > 0) && (e.length > 0) && (f.length() > 0)) {
+				document.getElementsById("buttonAggiungi").removeAttribute(
+						"disabled");
+			}
+		}
+	</script>
 </body>
 </html>
 
